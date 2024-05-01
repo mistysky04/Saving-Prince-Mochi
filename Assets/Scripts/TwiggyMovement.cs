@@ -6,9 +6,11 @@ public class TwiggyMovement : MonoBehaviour
 {
     private Rigidbody2D body;
 
+    Vector2 moveInput;
+    public boolean IsMoving {get; private set;}
+
     // SerializeField allows us to access variable from unity
-    [SerializeField] private float horizontalSpeed;
-    [SerializeField] private float verticalSpeed;
+    public float walkSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +21,20 @@ public class TwiggyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // GetAxis("Horizontal") --> checks for L vs. R keys
-        // body.velocity takes current velocity of body (i.e. set to 0)
-        body.velocity = new Vector2(Input.GetAxis("Horizontal")*horizontalSpeed,  body.velocity.y);
 
-        if(Input.GetKey(KeyCode.Space)){
-            body.velocity = new Vector2(body.velocity.x, verticalSpeed);
-        }
+    }
 
+    private void FixedUpdate() 
+    {
+        
+    }
 
+    void OnMove(InputAction.CallbackContext context) 
+    {
+        // X & Y movement input
+        // Ensure its not 0, otherwise isMoving will be set to FALSE
+        moveInput = context.ReadValue<Vector2>();
+
+        IsMoving = moveInput != Vector2.zero;
     }
 }
