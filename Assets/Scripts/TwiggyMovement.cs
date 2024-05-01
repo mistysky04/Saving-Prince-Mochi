@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class TwiggyMovement : MonoBehaviour
@@ -7,7 +8,8 @@ public class TwiggyMovement : MonoBehaviour
     private Rigidbody2D body;
 
     Vector2 moveInput;
-    public boolean IsMoving {get; private set;}
+
+    public bool IsMoving { get; private set; }
 
     // SerializeField allows us to access variable from unity
     public float walkSpeed = 5f;
@@ -26,7 +28,7 @@ public class TwiggyMovement : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        
+
     }
 
     void OnMove(InputAction.CallbackContext context) 
