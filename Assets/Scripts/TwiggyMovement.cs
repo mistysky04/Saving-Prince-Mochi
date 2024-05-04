@@ -8,7 +8,23 @@ public class TwiggyMovement : MonoBehaviour
 
     Vector2 moveInput;
     Rigidbody2D rigidBody;
-    public bool IsMoving { get; private set; }
+
+    // initial value of isMoving
+    private bool _isMoving = false;
+
+    Animator animator;
+    public bool IsMoving
+    {
+        get
+        {
+            return _isMoving;
+        }
+        private set
+        {
+            _isMoving = value;
+            animator.SetBool("IsMoving", value);
+        }
+    }
     public float walkSpeed = 5f;
 
     // Finds component as soon as game starts up (even before Start)
@@ -16,6 +32,7 @@ public class TwiggyMovement : MonoBehaviour
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -43,5 +60,16 @@ public class TwiggyMovement : MonoBehaviour
 
         // IsMoving is true when moveInput is NOT zero
         IsMoving = moveInput != Vector2.zero;
+    }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            IsMoving = true;
+        } else if (context.canceled)
+        {
+            IsMoving = false;
+        }
     }
 }
