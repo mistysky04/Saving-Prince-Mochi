@@ -18,6 +18,7 @@ public class TwiggyMovement : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
+
     // Start is called before the first frame update
     void Start()
     {
