@@ -866,6 +866,7 @@ GameObject:
   - component: {fileID: 1270074269}
   - component: {fileID: 1270074270}
   - component: {fileID: 1270074271}
+  - component: {fileID: 1270074272}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -954,6 +955,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
   subject: {fileID: 1140470844562719830}
+--- !u!114 &1270074272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270074268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 0}
 --- !u!1 &1379917835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,7 +1700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286336459454680058, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2286336459454680058, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_ActionId
@@ -1740,6 +1755,10 @@ PrefabInstance:
       value: f4311ac6-d59d-4feb-964f-e5cb206311e4
       objectReference: {fileID: 0}
     - target: {fileID: 2286336459454680058, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: 55f8b303-1bad-47ae-aff2-767bf45707da
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286336459454680058, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_ActionName
       value: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
       objectReference: {fileID: 0}
@@ -1792,6 +1811,10 @@ PrefabInstance:
       value: UI/TrackedDeviceOrientation
       objectReference: {fileID: 0}
     - target: {fileID: 2286336459454680058, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Player/Run[/Keyboard/leftArrow,/Keyboard/rightArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286336459454680058, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1820,7 +1843,23 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6897420938856671343, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
+      propertyPath: m_Mass
+      value: 0.44495767
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897420938856671343, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
       propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897420938856671343, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897420938856671343, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897420938856671343, guid: 1128f1624d4710746a305e15151f7ade, type: 3}
+      propertyPath: m_UseAutoMass
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6897420938856671343, guid: 1128f1624d4710746a305e15151f7ade, type: 3}

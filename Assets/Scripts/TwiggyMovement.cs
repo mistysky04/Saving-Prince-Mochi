@@ -12,6 +12,12 @@ public class TwiggyMovement : MonoBehaviour
     // initial value of isMoving
     private bool _isMoving = false;
 
+    // initial value of facingRight
+    private bool _facingLeft = false;
+
+    private PlayerInputActions controls;
+
+
     Animator animator;
     public bool IsMoving
     {
@@ -25,7 +31,22 @@ public class TwiggyMovement : MonoBehaviour
             animator.SetBool("IsMoving", value);
         }
     }
-    public float walkSpeed = 5f;
+
+    public bool FacingLeft
+    {
+        get
+        {
+            return _facingLeft;
+        }
+        private set
+        {
+            _facingLeft = value;
+            animator.SetBool("FacingLeft", value);
+        }
+    }
+
+
+    public float walkSpeed = 50f;
 
     // Finds component as soon as game starts up (even before Start)
     // Ensures rigidbody exists on component
@@ -33,12 +54,25 @@ public class TwiggyMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        controls = new PlayerInputActions();
+
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -50,7 +84,9 @@ public class TwiggyMovement : MonoBehaviour
     private void FixedUpdate() 
     {
         // y controlled by gravity, NOT player controls
+        // Controls position of rigidbody
         rigidBody.velocity = new Vector2(moveInput.x * walkSpeed, rigidBody.velocity.y);
+        Vector2 facingDirection = controls.Player.Move.ReadValue<Vector2>();
     }
 
     public void OnMove(InputAction.CallbackContext context) 
@@ -64,9 +100,18 @@ public class TwiggyMovement : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
+
         if (context.started)
         {
+            if (context.ReadValue<Vector2>().x == -1)
+            {
+                Debug.Log(context.ReadValue<Vector2>().x);
+                FacingLeft = true;
+                IsMoving = true;
+            }
+
             IsMoving = true;
+
         } else if (context.canceled)
         {
             IsMoving = false;
