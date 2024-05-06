@@ -12,10 +12,8 @@ public class TwiggyMovement : MonoBehaviour
     // initial value of isMoving
     private bool _isMoving = false;
 
-    // initial value of facingRight
+    // initial value of facingLeft
     private bool _facingLeft = false;
-
-    private PlayerInputActions controls;
 
 
     Animator animator;
@@ -46,7 +44,7 @@ public class TwiggyMovement : MonoBehaviour
     }
 
 
-    public float walkSpeed = 50f;
+    public float walkSpeed = 5f;
 
     // Finds component as soon as game starts up (even before Start)
     // Ensures rigidbody exists on component
@@ -54,20 +52,8 @@ public class TwiggyMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        controls = new PlayerInputActions();
 
     }
-
-    private void OnEnable()
-    {
-        controls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        controls.Disable();
-    }
-
 
     // Start is called before the first frame update
     void Start()
@@ -86,7 +72,6 @@ public class TwiggyMovement : MonoBehaviour
         // y controlled by gravity, NOT player controls
         // Controls position of rigidbody
         rigidBody.velocity = new Vector2(moveInput.x * walkSpeed, rigidBody.velocity.y);
-        Vector2 facingDirection = controls.Player.Move.ReadValue<Vector2>();
     }
 
     public void OnMove(InputAction.CallbackContext context) 
@@ -100,16 +85,11 @@ public class TwiggyMovement : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
+        moveInput = context.ReadValue<Vector2>();
+        FacingLeft = moveInput == Vector2.left;
 
         if (context.started)
         {
-            if (context.ReadValue<Vector2>().x == -1)
-            {
-                Debug.Log(context.ReadValue<Vector2>().x);
-                FacingLeft = true;
-                IsMoving = true;
-            }
-
             IsMoving = true;
 
         } else if (context.canceled)

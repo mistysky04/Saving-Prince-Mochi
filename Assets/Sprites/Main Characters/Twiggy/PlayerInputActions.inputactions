@@ -34,12 +34,12 @@
                 },
                 {
                     "name": "Run",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "55f8b303-1bad-47ae-aff2-767bf45707da",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -231,26 +231,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "70231578-837c-462e-a61b-bd40712d88f8",
-                    "path": "<Keyboard>/leftArrow",
+                    "name": "Forward/Backward",
+                    "id": "7d6292ec-36b7-41e8-9cf1-2caa105add9f",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "",
                     "action": "Run",
-                    "isComposite": false,
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "63f44b7d-98a1-4061-a367-9ddc6acd982d",
+                    "name": "left",
+                    "id": "7fc2b8d4-4d7b-4139-a423-b60494576931",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "aacbb4a8-e8d8-43f4-8d86-5ea64e30b4f6",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "",
                     "action": "Run",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 }
             ]
         },
