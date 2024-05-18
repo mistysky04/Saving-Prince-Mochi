@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using System;
 
 public class TwiggyMovement : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class TwiggyMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D rigidBody;
 
+    public float walkSpeed = 5f;
+
     // initial value of isMoving
     private bool _isMoving = false;
 
-    // initial value of facingLeft
-    private bool _facingLeft = false;
+    private bool _isFacingRight = true;
+
 
 
     Animator animator;
@@ -30,21 +33,22 @@ public class TwiggyMovement : MonoBehaviour
         }
     }
 
-    public bool FacingLeft
-    {
+    public bool FacingRight {
         get
         {
-            return _facingLeft;
+            return _isFacingRight;
         }
         private set
         {
-            _facingLeft = value;
-            animator.SetBool("FacingLeft", value);
+            // If player isn't already facing the same direction, multiply it's movement by -1 (flip x scale)
+            if(_isFacingRight != value)
+            {
+                // set facing direction as value
+                transform.localScale *= new Vector2(-1, 1);
+                _isFacingRight = value;
+            }
         }
     }
-
-
-    public float walkSpeed = 5f;
 
     // Finds component as soon as game starts up (even before Start)
     // Ensures rigidbody exists on component
@@ -81,20 +85,36 @@ public class TwiggyMovement : MonoBehaviour
 
         // IsMoving is true when moveInput is NOT zero
         IsMoving = moveInput != Vector2.zero;
+
+        setFacingDirection(moveInput);
     }
 
-    public void OnRun(InputAction.CallbackContext context)
+    private void setFacingDirection(Vector2 moveInput)
     {
-        moveInput = context.ReadValue<Vector2>();
-        FacingLeft = moveInput == Vector2.left;
-
-        if (context.started)
+        // check if player is trying to move R & isn't already facing R
+        // MUST check if isn't already facing that direction, otherwise vector will be improperly flipped
+        if(moveInput.x >  0 && !FacingRight)
         {
-            IsMoving = true;
+            FacingRight = true;
 
-        } else if (context.canceled)
+        // check if player is trying to move L & isn't already facing L
+        } else if (moveInput.x < 0 && FacingRight)
         {
-            IsMoving = false;
+            FacingRight = false;
         }
     }
+
+    //public void OnRun(InputAction.CallbackContext context)
+    //{
+    //    moveInput = context.ReadValue<Vector2>();
+
+    //    if (context.started)
+    //    {
+    //        IsMoving = true;
+
+    //    } else if (context.canceled)
+    //    {
+    //        IsMoving = false;
+    //    }
+    //}
 }
