@@ -100,10 +100,10 @@ TextureImporter:
       name: Snack_machine_Bench_Trash_bin (16 x 16)_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 16
-        width: 24
-        height: 32
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: Snack_machine_Bench_Trash_bin (16 x 16)_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 16
-        width: 40
-        height: 17
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: Snack_machine_Bench_Trash_bin (16 x 16)_2
       rect:
         serializedVersion: 2
-        x: 98
-        y: 16
-        width: 12
-        height: 15
+        x: 48
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,6 +155,174 @@ TextureImporter:
       bones: []
       spriteID: 36206bd0790b4f847957b5a2010a8e6d
       internalID: 1302794251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snack_machine_Bench_Trash_bin (16 x 16)_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398a7f9657cdd644d9559aab3c298b01
+      internalID: 1617937688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snack_machine_Bench_Trash_bin (16 x 16)_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611480529da14e841b115a9f32576758
+      internalID: -1283026943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snack_machine_Bench_Trash_bin (16 x 16)_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a592393986659644afa84d162f21558
+      internalID: 1177642419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snack_machine_Bench_Trash_bin (16 x 16)_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e4f0995125b6e49b0c856abe6e8344
+      internalID: -551885770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snack_machine_Bench_Trash_bin (16 x 16)_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b94beeb87909f94b97ac2731d82210c
+      internalID: -1287634868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snack_machine_Bench_Trash_bin (16 x 16)_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7215c36f3d6cf947886d0e05d1244f7
+      internalID: -29121969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snack_machine_Bench_Trash_bin (16 x 16)_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17703bfaa5a0e4489da47262356948a
+      internalID: 1777174225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snack_machine_Bench_Trash_bin (16 x 16)_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea2e28f8c924a4419a2dd54d5fa853f
+      internalID: 985783721
       vertices: []
       indices: 
       edges: []
@@ -172,7 +340,15 @@ TextureImporter:
     nameFileIdTable:
       Snack_machine_Bench_Trash_bin (16 x 16)_0: 484885419
       Snack_machine_Bench_Trash_bin (16 x 16)_1: -679896957
+      Snack_machine_Bench_Trash_bin (16 x 16)_10: 985783721
       Snack_machine_Bench_Trash_bin (16 x 16)_2: 1302794251
+      Snack_machine_Bench_Trash_bin (16 x 16)_3: 1617937688
+      Snack_machine_Bench_Trash_bin (16 x 16)_4: -1283026943
+      Snack_machine_Bench_Trash_bin (16 x 16)_5: 1177642419
+      Snack_machine_Bench_Trash_bin (16 x 16)_6: -551885770
+      Snack_machine_Bench_Trash_bin (16 x 16)_7: -1287634868
+      Snack_machine_Bench_Trash_bin (16 x 16)_8: -29121969
+      Snack_machine_Bench_Trash_bin (16 x 16)_9: 1777174225
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

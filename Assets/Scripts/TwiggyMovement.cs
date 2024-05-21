@@ -29,7 +29,7 @@ public class TwiggyMovement : MonoBehaviour
         private set
         {
             _isMoving = value;
-            animator.SetBool("IsMoving", value);
+            animator.SetBool(AnimationStrings.IsMoving, value);
         }
     }
 
