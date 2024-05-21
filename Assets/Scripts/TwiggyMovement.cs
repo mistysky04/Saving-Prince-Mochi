@@ -76,6 +76,7 @@ public class TwiggyMovement : MonoBehaviour
         // y controlled by gravity, NOT player controls
         // Controls position of rigidbody
         rigidBody.velocity = new Vector2(moveInput.x * walkSpeed, rigidBody.velocity.y);
+        animator.SetFloat(AnimationStrings.yVelocity, rigidBody.velocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context) 
