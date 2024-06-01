@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using System;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirection))]
+
 public class TwiggyMovement : MonoBehaviour
 {
 
@@ -12,14 +14,20 @@ public class TwiggyMovement : MonoBehaviour
 
     public float walkSpeed = 5f;
 
+
+    public float jumpImpulse = 10f;
+
     // initial value of isMoving
     private bool _isMoving = false;
 
     private bool _isFacingRight = true;
 
+    TouchingDirection touchingDirection;
+
 
 
     Animator animator;
+
     public bool IsMoving
     {
         get
@@ -30,6 +38,21 @@ public class TwiggyMovement : MonoBehaviour
         {
             _isMoving = value;
             animator.SetBool(AnimationStrings.IsMoving, value);
+        }
+    }
+
+    public float CurrentMoveSpeed
+    {
+        get
+        {
+            if (IsMoving && !touchingDirection.IsOnWall)
+            {
+                return walkSpeed;
+
+            } else
+            {
+                return 0;
+            }
         }
     }
 
@@ -56,6 +79,7 @@ public class TwiggyMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        touchingDirection = GetComponent<TouchingDirection>();
 
     }
 
@@ -75,7 +99,7 @@ public class TwiggyMovement : MonoBehaviour
     {
         // y controlled by gravity, NOT player controls
         // Controls position of rigidbody
-        rigidBody.velocity = new Vector2(moveInput.x * walkSpeed, rigidBody.velocity.y);
+        rigidBody.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rigidBody.velocity.y);
         animator.SetFloat(AnimationStrings.yVelocity, rigidBody.velocity.y);
     }
 
@@ -102,6 +126,16 @@ public class TwiggyMovement : MonoBehaviour
         } else if (moveInput.x < 0 && FacingRight)
         {
             FacingRight = false;
+        }
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if(context.started && touchingDirection.IsGrounded)
+        {
+            animator.SetTrigger(AnimationStrings.jump);
+            rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpImpulse);
+            
         }
     }
 
